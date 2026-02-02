@@ -12,6 +12,8 @@ public class laptopshopApplication {
         // lấy ra biến
         ApplicationContext hoidanit = SpringApplication.run(laptopshopApplication.class, args);
         for (String s : hoidanit.getBeanDefinitionNames()) {
+            // in ra tất cả beans java quản lý, quản lý các container, là thực thể do spring
+            // quản lý
             System.out.println(s);
             ;
         }
