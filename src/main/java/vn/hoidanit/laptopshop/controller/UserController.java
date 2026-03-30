@@ -3,6 +3,7 @@ package vn.hoidanit.laptopshop.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import org.springframework.ui.Model;
 import vn.hoidanit.laptopshop.service.UserService;
 
 // class này biến thành controller
@@ -17,8 +18,11 @@ public class UserController {
     }
 
     @GetMapping("/")
-    public String getHomePage() {
-        this.userService.handleHello();
+    public String getHomePage(Model model) {
+        System.out.println("------ HOMEPAGE CALLED ------");
+        String test = this.userService.handleHello();
+        model.addAttribute("eric", test);
+        model.addAttribute("minhquan", "Quan thich Anh Thu lam");
         return "hello";
     }
 
