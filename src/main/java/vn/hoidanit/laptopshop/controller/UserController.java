@@ -16,6 +16,11 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
+    @GetMapping("/admin/user")
+    public String getUserPage(Model model) {
+        
+        return "admin/user/create";
+    }
 
     @GetMapping("/")
     public String getHomePage(Model model) {
