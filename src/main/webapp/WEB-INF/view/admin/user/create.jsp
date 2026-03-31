@@ -1,3 +1,7 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <html lang="en">
 
 <head>
@@ -16,37 +20,39 @@
             <div class="col-md-6 col-12 mx-auto">
                 <h3>Create User</h3>
                 </hr>
-                <form>
+                <!-- dùng form để nói vs spring may phai lấy cái nội dung từ này -->
+                <form:form method="post" action="/admin/user/create1" modelAttribute="newUser">
                     <div class="mb-3">
                         <label  class="form-label">Email address</label>
-                        <input type="email" class="form-control" >
+                        <form:input type="email" class="form-control" path="email" />
+                        
                     </div>
+                    <!-- margin bottom -->
                     <div class="mb-3">
                         <label  class="form-label">Password</label>
-                        <input type="password" class="form-control" >
+                        <form:input type="password" class="form-control" path="password" />
+                        
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Full Name</label>
-                        <input type="text" class="form-control">
+                        <form:input type="text" class="form-control" path="fullName"/>
+
                     </div>
 
                     <div class="mb-3">
                         <label  class="form-label">Address</label>
-                        <input type="text" class="form-control" >
+                        <form:input type="text" class="form-control" path="address" />
+                        
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputPhone" class="form-label">Phone</label>
-                        <input type="text" class="form-control" id="exampleInputPhone">
-                    </div>
-
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <form:input type="text" class="form-control" path="phone"/>
+                        
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                </form:form>
 
             </div>
         </div>

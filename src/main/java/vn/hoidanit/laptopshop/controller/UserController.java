@@ -2,8 +2,12 @@ package vn.hoidanit.laptopshop.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.ui.Model;
+
+import vn.hoidanit.laptopshop.domain.User;
 import vn.hoidanit.laptopshop.service.UserService;
 
 // class này biến thành controller
@@ -16,18 +20,16 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    @GetMapping("/admin/user")
+    @RequestMapping("/admin/user")
     public String getUserPage(Model model) {
-        
+        model.addAttribute("newUser", new User());
         return "admin/user/create";
     }
 
-    @GetMapping("/")
-    public String getHomePage(Model model) {
-        System.out.println("------ HOMEPAGE CALLED ------");
-        String test = this.userService.handleHello();
-        model.addAttribute("eric", test);
-        model.addAttribute("minhquan", "Quan thich Anh Thu lam");
+    @RequestMapping(value="/admin/user/create1", method = RequestMethod.POST)
+    // thuoc tinh nay chinh la form
+    public String creatUserPage(Model model, @ModelAttribute("newUser") User hoidanit) {
+        System.out.println("run here" + hoidanit);
         return "hello";
     }
 
