@@ -21,7 +21,8 @@
                 <h3>Create User</h3>
                 </hr>
                 <!-- dùng form để nói vs spring may phai lấy cái nội dung từ này -->
-                <form:form method="post" action="/admin/user/create1" modelAttribute="newUser">
+                <form:form method="post" action="/admin/user/create" modelAttribute="newUser"> 
+                    <!-- action: là địa chỉa view bắn dữ liệu về -->
                     <div class="mb-3">
                         <label  class="form-label">Email address</label>
                         <form:input type="email" class="form-control" path="email" />
