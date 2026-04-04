@@ -35,18 +35,18 @@
                                 </thead>
                                 <tbody>
                                     <c:forEach var="user" items="${users1}">
-                                    <tr>
-                                        <th>${user.id}</th>
-                                        <td>${user.email}</td>
-                                        <td>${user.fullName}</td>
-                                        <td>
+                                        <tr>
+                                            <th>${user.id}</th>
+                                            <td>${user.email}</td>
+                                            <td>${user.fullName}</td>
+                                            <td>
 
-                                            <button class="btn btn-success">Create</button>
-                                            <button type="button" class="btn btn-warning mx-2">Update</button>
-                                            <button type="button" class="btn btn-danger">Delete</button>
+                                                <a href="/admin/user/${user.id}" class="btn btn-success">view</a>
+                                                <button type="button" class="btn btn-warning mx-2">Update</button>
+                                                <button type="button" class="btn btn-danger">Delete</button>
 
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
                                     </c:forEach>
                                 </tbody>
                             </table>
