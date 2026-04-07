@@ -9,12 +9,17 @@ import jakarta.persistence.GenerationType;
 // để biến class thành table dùng tag entity
 @Entity
 public class User {
-    private String email,
-            password, fullName,
-            address, phone;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    private String email;
+    private String password;
+    private String fullName;
+    private String address;
+    private String phone;
+    private String avatar; 
+  
 
     public User() {
 
@@ -76,9 +81,21 @@ public class User {
         this.id = id;
     }
 
-    public String toString() {
-        return "User{id = "+ this.id +",email = " + this.email + ", password = " + this.password + ", fullName = " + this.fullName
-                + ", address = " + this.address + ", phone = " + this.phone + "}";
+    public String getAvatar() {
+        return avatar;
     }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", email=" + email + ", password=" + password + ", fullName=" + fullName
+                + ", address=" + address + ", phone=" + phone + ", avatar=" + avatar + "]";
+    }
+
+
+  
 
 }

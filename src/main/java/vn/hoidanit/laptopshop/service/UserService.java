@@ -1,6 +1,7 @@
 package vn.hoidanit.laptopshop.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -25,5 +26,13 @@ public class UserService {
     public User handleSaveUser(User user){
         User eric = this.userRepository.save(user);
         return eric;
+    }
+
+    public User getUserById(Long id){
+        return this.userRepository.findById(id).orElseThrow(() -> new RuntimeException("Không tìm thấy user"));
+    }
+
+    public void deleteByAUser(long id){
+        this.userRepository.deleteById(id);
     }
 }

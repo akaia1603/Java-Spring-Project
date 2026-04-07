@@ -6,7 +6,7 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Document</title>
+                <title>User</title>
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
                 <!-- Latest compiled JavaScript -->
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -41,9 +41,9 @@
                                             <td>${user.fullName}</td>
                                             <td>
 
-                                                <a href="/admin/user/${user.id}" class="btn btn-success">view</a>
-                                                <button type="button" class="btn btn-warning mx-2">Update</button>
-                                                <button type="button" class="btn btn-danger">Delete</button>
+                                                <a href="/admin/user/${user.id}" class="btn btn-success">View</a>
+                                                <a href="/admin/user/update/${user.id}" class="btn btn-warning">Update</a>
+                                                <a href="/admin/user/delete/${user.id}" class="btn btn-danger">Delete</a>
 
                                             </td>
                                         </tr>

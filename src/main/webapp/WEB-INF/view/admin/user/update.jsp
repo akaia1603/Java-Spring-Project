@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table</title>
+    <title>Update User</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -21,19 +21,19 @@
                 <h3>Create User</h3>
                 </hr>
                 <!-- dùng form để nói vs spring may phai lấy cái nội dung từ này -->
-                <form:form method="post" action="/admin/user/create" modelAttribute="newUser"> 
+                <form:form method="post" action="/admin/user/update" modelAttribute="newUser"> 
                     <!-- action: là địa chỉa view bắn dữ liệu về -->
+                    <div class="mb-3" style="display: none;"">
+                        <label  class="form-label" >Id:</label>
+                        <form:input type="text" class="form-control" path="id" />
+                        
+                    </div>
                     <div class="mb-3">
                         <label  class="form-label">Email address</label>
                         <form:input type="email" class="form-control" path="email" />
                         
                     </div>
                     <!-- margin bottom -->
-                    <div class="mb-3">
-                        <label  class="form-label">Password</label>
-                        <form:input type="password" class="form-control" path="password" />
-                        
-                    </div>
                     <div class="mb-3">
                         <label class="form-label">Full Name</label>
                         <form:input type="text" class="form-control" path="fullName"/>
@@ -52,7 +52,7 @@
                         
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-warning">Update</button>
                 </form:form>
 
             </div>
