@@ -17,10 +17,10 @@ public class UserService {
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-    public List<User> getAllUser(){
+    public List<User> getAllUsers(){
         return this.userRepository.findAll();
     }
-    public List<User> getAllUserByEmai(String Email){
+    public List<User> getAllUsersByEmail(String Email){
         return this.userRepository.findByEmail(Email);
     }
     public User handleSaveUser(User user){
@@ -32,7 +32,7 @@ public class UserService {
         return this.userRepository.findById(id).orElseThrow(() -> new RuntimeException("Không tìm thấy user"));
     }
 
-    public void deleteByAUser(long id){
+    public void deleteAUser(long id){
         this.userRepository.deleteById(id);
     }
 }
